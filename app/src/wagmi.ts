@@ -3,12 +3,12 @@ import { mainnet } from 'viem/chains'
 import { createConfig, createStorage, http } from 'wagmi'
 import { coinbaseWallet, injected, metaMask } from 'wagmi/connectors'
 
-const localhost = defineChain({
-  id: 31337,
+export const dev = defineChain({
   name: 'Dev',
+  id: 31337,
   nativeCurrency: {
     name: 'Ethereum',
-    symbol: 'ETH',
+    symbol: 'GO',
     decimals: 18
   },
   rpcUrls: {
@@ -19,12 +19,12 @@ const localhost = defineChain({
 })
 
 export const config = createConfig({
-  chains: [localhost],
+  chains: [dev],
   client: ({ chain }) => {
     return createClient({ chain, transport: http() })
   },
   // transports: {
-  //   [localhost.id]: http()
+  //   [dev.id]: http()
   // },
   connectors: [
     injected({ target: 'metaMask' })

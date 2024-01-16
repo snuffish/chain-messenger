@@ -1,5 +1,4 @@
 import { RecoverMessageAddressParameters, VerifyMessageParameters, recoverMessageAddress, verifyMessage } from 'viem';
-import { Signer } from "ethers";
 
 export async function getSigner(signerNr: number = 0) {
     // @ts-ignore
@@ -16,3 +15,4 @@ export const recoverSignMessageSender = async (args: RecoverMessageAddressParame
 export const verifySignMessage = async (args: VerifyMessageParameters) => {
     return await verifyMessage(args)
 }
+
