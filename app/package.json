@@ -1,4 +1,4 @@
-`{
+{
   "name": "vite-react",
   "private": true,
   "version": "0.0.0",
@@ -10,10 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@metamask/eth-sig-util": "^7.0.1",
     "@preact/signals": "^1.2.2",
     "@tanstack/react-query": "5.0.5",
     "crypto-js": "^4.2.0",
+    "ethereumjs-util": "^7.1.5",
     "ethers": "^6.10.0",
+    "framer-motion": "^10.18.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "viem": "2.0.0",

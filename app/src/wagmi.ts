@@ -1,7 +1,6 @@
 import { createClient, defineChain } from 'viem'
-import { mainnet } from 'viem/chains'
 import { createConfig, createStorage, http } from 'wagmi'
-import { coinbaseWallet, injected, metaMask } from 'wagmi/connectors'
+import { injected } from 'wagmi/connectors'
 
 export const dev = defineChain({
   name: 'Dev',
@@ -23,17 +22,12 @@ export const config = createConfig({
   client: ({ chain }) => {
     return createClient({ chain, transport: http() })
   },
-  // transports: {
-  //   [dev.id]: http()
-  // },
   connectors: [
     injected({ target: 'metaMask' })
   ],
   multiInjectedProviderDiscovery: false,
   storage: createStorage({ storage: window.localStorage }),
 })
-
-
 
 declare module 'wagmi' {
   interface Register {
