@@ -13,7 +13,7 @@ export const encryptInternalData = (wallet: Wallet, data: string) => {
 }
 
 const requestPublicKey = (web3: providers.Web3Provider, account: string) => {
-  return web3.send("eth_getEncryptionPublicKey", [account]);
+  return web3.send('eth_getEncryptionPublicKey', [account]);
 };
 
 const ethEncrypt = (publicKey: string, text: string) => {
@@ -33,7 +33,7 @@ const ethDecrypt = async (
     account: string,
     text: string
 ) => {
-    const result = await web3.send("eth_decrypt", [text, account])
+    const result = await web3.send('eth_decrypt', [text, account])
     return result
 };
 
