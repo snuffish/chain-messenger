@@ -1,7 +1,6 @@
-import { defineConfig } from 'vite';
-import { createClient, defineChain } from 'viem'
-import { createConfig, createStorage, http } from 'wagmi'
-import { injected } from 'wagmi/connectors'
+import { createClient, defineChain } from 'viem';
+import { createConfig, createStorage, http } from 'wagmi';
+import { injected } from 'wagmi/connectors';
 
 export const dev = defineChain({
   name: 'Dev',

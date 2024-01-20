@@ -1,4 +1,4 @@
-import { Wallet } from 'ethers';
+import { EtherSymbol, Wallet } from 'ethers';
 import { HmacSHA256, enc } from 'crypto-js';
 import * as sigUtil from "@metamask/eth-sig-util";
 import * as ethUtil from 'ethereumjs-util'

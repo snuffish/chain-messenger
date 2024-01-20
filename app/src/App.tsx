@@ -1,12 +1,15 @@
 
 import React from 'react'
 import { createPublicClient, http } from 'viem'
+import { useAccount } from 'wagmi'
 import Connect from './components/Connect'
-import { dev } from './wagmi'
-import { useAccount, useConnect } from 'wagmi'
 import Disconnect from './components/Disconnect'
 import Test from './components/Test'
+import { dev } from './wagmi'
+import { test } from './utils/ipfs'
 // import { parseEther } from 'viem'
+
+test()
 
 export const Client = createPublicClient({
   chain: dev,

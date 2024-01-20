@@ -1,16 +1,18 @@
-import { useQuery } from "@tanstack/react-query"
+import { useMetamask } from 'use-metamask';
+import { useMutation, useQuery } from "@tanstack/react-query"
 import { useConnectorClient } from "wagmi"
 import { ethereumRequest } from "../utils/crypt"
-import { Address } from "viem"
+import { Address, zeroAddress } from "viem"
 
-const useEncryptionPublicKey = (address: string) => {
-    let { data: encryptionPublicKey, refetch, fetchStatus, isFetched } = useQuery({
-        queryFn: () => ethereumRequest('eth_getEncryptionPublicKey', [address]),
+const useEncryptionPublicKey = () => {
+    const { data: client, isSuccess } = useConnectorClient()
+    const address = isSuccess ? client.account.address : zeroAddress
+
+    return useQuery({
+        queryFn: () => isSuccess ? ethereumRequest('eth_getEncryptionPublicKey', [address]) : null,
         queryKey: [],
         enabled: false
     })
-
-    return { encryptionPublicKey, fetch: refetch, fetchStatus, isFetched }
 }
 
 export default useEncryptionPublicKey
