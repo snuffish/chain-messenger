@@ -4,7 +4,7 @@ import { useFonts } from 'expo-font';
 import { useEffect } from 'react';
 import { TamaguiProvider, Text, Theme } from 'tamagui';
 import App from './App';
-import tamaguiConfig from '../tamagui.config';
+import tamaguiConfig from '../tamagui.config.ts'
 
 const Main = () => {
   const [loaded] = useFonts({
