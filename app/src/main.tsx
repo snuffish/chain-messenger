@@ -1,27 +1,30 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { ChakraProvider } from '@chakra-ui/react'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { Buffer } from 'buffer'
-import { WagmiProvider } from 'wagmi'
+import '@tamagui/core/reset.css';
+import { registerRootComponent } from 'expo';
+import { useFonts } from 'expo-font';
+import { useEffect } from 'react';
+import { TamaguiProvider, Text, Theme } from 'tamagui';
+import App from './App';
+import tamaguiConfig from '../tamagui.config';
 
-import App from './App.tsx'
-import { config } from './wagmi.ts'
+const Main = () => {
+  const [loaded] = useFonts({
+    Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"),
+    InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf")
+  })
 
-import './index.css'
+  useEffect(() => {
+    if (loaded) { }
+  }, [loaded])
 
-globalThis.Buffer = Buffer
+  if (!loaded) return null
 
-const queryClient = new QueryClient()
+  return (
+    <TamaguiProvider config={tamaguiConfig}>
+      <Theme name='Input'>
+        <App />
+      </Theme>
+    </TamaguiProvider>
+  )
+}
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <WagmiProvider config={config}>
-      <QueryClientProvider client={queryClient}>
-        <ChakraProvider>
-          <App />
-        </ChakraProvider>
-      </QueryClientProvider>
-    </WagmiProvider>
-  </React.StrictMode>,
-)
+registerRootComponent(Main)
