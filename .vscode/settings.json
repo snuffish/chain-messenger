@@ -12,5 +12,8 @@
         "preact",
         "tanstack",
         "xsalsa"
-    ]
+    ],
+    "[shellscript]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    }
 }
