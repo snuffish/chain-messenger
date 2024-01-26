@@ -1,36 +1,20 @@
-# TypeScript Example
+# web3-react-native-dapp-wagmi
 
-<p>
-  <!-- iOS -->
-  <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
-  <!-- Android -->
-  <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
-  <!-- Web -->
-  <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
-</p>
+This repository showcases how to build a modern web3 dApp with React Native, [wagmi](https://wagmi.sh) and [WalletConnect's Web3Modal](https://docs.walletconnect.com/web3modal/react-native/about)
 
-```sh
-npx create-react-native-app -t with-typescript
-```
+Read the article for a more detailed explanation: [Best DX for React Native Web3 dApps With Web3Modal and Wagmi](https://www.callstack.com/blog/best-dx-for-react-native-web3-dapps-with-web3modal-and-wagmi)
 
-TypeScript is a superset of JavaScript which gives you static types and powerful tooling in Visual Studio Code including autocompletion and useful inline warnings for type errors.
+## Requirements
 
-## 🚀 How to use
+- [Expo environment setup](https://docs.expo.dev/get-started/installation/#requirements) (Node.js, Git, Watchman)
+- A [Wallet Connect Cloud](https://cloud.walletconnect.com/sign-in) project ID
+- Expo Go app installed in your smartphone
+- One or more web3 wallets installed in your smartphone (e.g. MetaMask, Rainbow Wallet, Trust Wallet, etc)
 
-#### Creating a new project
+## How to run
 
-- Install the CLI: `npm i -g expo-cli`
-- Create a project: `npx create-react-native-app -t with-typescript`
-- `cd` into the project
-
-### Adding TypeScript to existing projects
-
-- Create a blank TypeScript config: `touch tsconfig.json`
-- Run `yarn start` or `npm run start` to automatically configure TypeScript
-- Rename files to TypeScript, `.tsx` for React components and `.ts` for plain typescript files
-
-> 💡 You can disable the TypeScript setup in Expo CLI with the environment variable `EXPO_NO_TYPESCRIPT_SETUP=1 expo start`
-
-## 📝 Notes
-
-- [Expo TypeScript guide](https://docs.expo.dev/versions/latest/guides/typescript/)
+- Rename `.env.example` to `.env` and fill in your Wallet Connect Cloud project ID
+- In `src/components/WalletActions.tsx`, in `usePrepareSendTransaction()`, fill in the `to` field with a valid wallet address, so you can receive test MATIC in the Polygon Mumbai testnet
+- `npm start`
+- Open Expo Go app in your smartphone
+- If your smartphone is in the same network as your computer, the local dev server should appear as the first option. If it doesn't, use the app to scan the QR Code presented in the terminal

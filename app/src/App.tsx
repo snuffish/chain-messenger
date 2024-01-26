@@ -1,22 +1,42 @@
+import { W3mButton } from '@web3modal/wagmi-react-native';
+import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Button, Theme } from 'tamagui';
-import SendMessage from './components/SendMessage';
+import { useAccount, useBalance, useBlockNumber } from 'wagmi';
 
-const App = () => {
+
+export default function App() {
+  const { data: blockNumber } = useBlockNumber()
+  const { address, isConnected, status } = useAccount()
+  const { data: balance } = useBalance({ address, formatUnits: 'ether' });
+
   return (
-    <View>
-      <SendMessage />
-    </View>
+    <View style={styles.container}>
+      <View style={styles.buttonContainer}>
+        <W3mButton />
+      </View>
+
+      {isConnected && (
+        <View style={styles.block}>
+          <Text>Block: {String(blockNumber ?? 0)}</Text>
+          <Text>Address: {address}</Text>
+          <Text>Balance: {balance?.formatted}</Text>
+        </View>
+      )
+      }
+    </View >
   );
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
-
-export default App
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    marginHorizontal: 20,
+  },
+  buttonContainer: {
+    alignItems: 'center',
+  },
+  block: {
+    marginTop: 32,
+  },
+});

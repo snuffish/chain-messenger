@@ -1,6 +1,7 @@
 import * as crypto from 'crypto'
 import { Wallet } from 'ethers';
-import { encryptInternalData } from '../app/src/utils/crypt';
+import { encryptInternalData } from '../web/src/utils/crypt';
+
 
 describe('Encryption', () => {
     const wallet = new Wallet('1f7cb0d34ce76439161e7e113204cc2af226ce4efae51052a1bc042187a7520e')
