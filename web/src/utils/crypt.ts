@@ -5,6 +5,18 @@ import * as ethUtil from 'ethereumjs-util'
 // import { useMetamask } from "use-metamask";
 // import { providers } from "ethers";
 
+
+// const useEncryptionPublicKey = () => {
+//     const { data: client, isSuccess } = useConnectorClient()
+//     const address = isSuccess ? client.account.address : zeroAddress
+
+//     return useQuery({
+//         queryFn: () => isSuccess ? ethereumRequest('eth_getEncryptionPublicKey', [address]) : null,
+//         queryKey: [],
+//         enabled: false
+//     })
+// }
+
 export const ethereumRequest = (method: string, params: any[]) => {
     return window.ethereum.request({ method, params })
 }

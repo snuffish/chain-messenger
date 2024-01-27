@@ -6,13 +6,10 @@ import {
     defaultWagmiConfig
 } from '@web3modal/wagmi-react-native';
 import { registerRootComponent } from "expo";
-import { WagmiConfig } from 'wagmi';
-import { arbitrum, mainnet, polygon, polygonMumbai } from 'wagmi/chains';
 import { StatusBar } from 'expo-status-bar';
-import HomePage from './pages/HomePage';
-import App from './App';
-import { Text, View } from 'react-native';
 import { defineChain } from 'viem';
+import { WagmiProvider } from 'wagmi';
+import App from './App';
 
 const projectId = process.env.EXPO_PUBLIC_WALLETCONNECT_CLOUD_PROJECT_ID;
 
@@ -63,11 +60,11 @@ createWeb3Modal({
 
 const Main = (): any => {
     return (
-        <WagmiConfig config={wagmiConfig}>
+        <WagmiProvider config={wagmiConfig}>
             <StatusBar style="auto" />
             <App />
             <Web3Modal />
-        </WagmiConfig>
+        </WagmiProvider>
     )
 }
 
