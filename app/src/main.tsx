@@ -14,6 +14,7 @@ import HomePage from './pages/HomePage';
 import App from './App';
 import { Text, View } from 'react-native';
 import { defineChain } from 'viem';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 const projectId = process.env.EXPO_PUBLIC_WALLETCONNECT_CLOUD_PROJECT_ID;
 
@@ -62,12 +63,16 @@ createWeb3Modal({
     wagmiConfig,
 });
 
+const queryClient = new QueryClient()
+
 const Main = (): any => {
     return (
         <WagmiConfig config={wagmiConfig}>
-            <StatusBar style="auto" />
-            <App />
-            <Web3Modal />
+            <QueryClientProvider client={queryClient}>
+                <StatusBar style="auto" />
+                <App />
+                <Web3Modal />
+            </QueryClientProvider>
         </WagmiConfig>
     )
 }

@@ -9,8 +9,10 @@
         "source.fixAll.eslint": "explicit"
     },
     "cSpell.words": [
+        "heila",
         "preact",
         "tanstack",
+        "Vcpia",
         "xsalsa"
     ],
     "[shellscript]": {
@@ -18,5 +20,8 @@
     },
     "[jsonc]": {
         "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    },
+    "[dotenv]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
     }
 }
