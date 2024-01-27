@@ -1,5 +1,6 @@
 import '@walletconnect/react-native-compat';
 
+import React from 'react';
 import {
     Web3Modal,
     createWeb3Modal,

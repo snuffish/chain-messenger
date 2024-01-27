@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "web3-react-native-dapp-wagmi",
-    "slug": "web3-react-native-dapp-wagmi",
+    "name": "Chain messenger",
+    "slug": "chain-messenger",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

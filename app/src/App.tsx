@@ -1,8 +1,7 @@
-import { W3mButton } from '@web3modal/wagmi-react-native';
 import React from 'react';
+import { W3mButton } from '@web3modal/wagmi-react-native';
 import { StyleSheet, Text, View } from 'react-native';
 import { useAccount, useBalance, useBlockNumber } from 'wagmi';
-
 
 export default function App() {
   const { data: blockNumber } = useBlockNumber({ watch: true })
@@ -39,4 +38,4 @@ const styles = StyleSheet.create({
   block: {
     marginTop: 32,
   },
-});
+})
