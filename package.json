@@ -33,6 +33,7 @@
         "start": "concurrently \"npm:ngrok-forward\" \"npm:hardhat-node\"",
         "ngrok-forward": "npm start --prefix ngrok",
         "hardhat-node": "npx hardhat node",
+        "app": "npm start --prefix app",
         "compile": "npx hardhat compile",
         "deploy": "npx hardhat --network localhost run scripts/deploy.ts",
         "faucet": "npx hardhat --network localhost faucet",

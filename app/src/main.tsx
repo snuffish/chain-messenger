@@ -45,7 +45,7 @@ const localhost = defineChain({
             http: ['http://127.0.0.1:8545/']
         },
         public: {
-            http: ['https://891a-2a00-1598-25c0-8400-301c-6eaa-69d3-fe7b.ngrok-free.app/']
+            http: ['https://chain.messenger.ngrok.dev/']
         }
     }
 })

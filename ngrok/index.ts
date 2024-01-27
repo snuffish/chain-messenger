@@ -1,19 +1,19 @@
 import 'dotenv/config'
 import * as http from "http"
+import * as ngrok from "@ngrok/ngrok";
 
 const domain = process.env.NGROK_DOMAIN || ''
 const forwardPort = process.env.NGROK_FORWARD_PORT
 
 const httpServer = http.createServer(function (req, res) {
     res.writeHead(200);
-    res.write("Hello");
+    res.write(`Ngrok serving on port ${forwardPort} for domain ${domain}`);
     res.end();
 });
 
-import * as ngrok from "@ngrok/ngrok";
 ngrok.consoleLog();
 
-const run = async (): Promise<void> => {
+const run = async () => {
     await standardConfig()
 };
 

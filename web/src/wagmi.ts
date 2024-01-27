@@ -4,7 +4,7 @@ import { injected } from 'wagmi/connectors';
 
 export const dev = defineChain({
   name: 'Dev',
-  id: 31337,
+  id: 1337,
   nativeCurrency: {
     name: 'Ethereum',
     symbol: 'GO',
