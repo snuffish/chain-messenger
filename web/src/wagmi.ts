@@ -1,6 +1,6 @@
 import { createClient, defineChain } from 'viem';
 import { createConfig, createStorage, http } from 'wagmi';
-import { injected } from 'wagmi/connectors';
+import { injected } from 'wagmi /connectors';
 
 export const dev = defineChain({
   name: 'Dev',
