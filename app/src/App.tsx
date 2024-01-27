@@ -5,9 +5,9 @@ import { useAccount, useBalance, useBlockNumber } from 'wagmi';
 
 
 export default function App() {
-  const { data: blockNumber } = useBlockNumber()
+  const { data: blockNumber } = useBlockNumber({ watch: true })
   const { address, isConnected, status } = useAccount()
-  const { data: balance } = useBalance({ address, formatUnits: 'ether' });
+  const { data: balance } = useBalance({ address, formatUnits: 'ether', watch: true });
 
   return (
     <View style={styles.container}>
