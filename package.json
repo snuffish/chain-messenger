@@ -18,6 +18,7 @@
         "@typescript-eslint/eslint-plugin": "^6.7.3",
         "@typescript-eslint/parser": "^6.7.3",
         "chai": "^4.4.1",
+        "concurrently": "^8.2.2",
         "dotenv": "^16.3.1",
         "ethers": "^6.1.0",
         "hardhat-abi-exporter": "^2.10.1",
@@ -29,8 +30,10 @@
         "typescript": "^5.3.3"
     },
     "scripts": {
+        "start": "concurrently \"npm:ngrok-forward\" \"npm:hardhat-node\"",
+        "ngrok-forward": "npm start --prefix ngrok",
+        "hardhat-node": "npx hardhat node",
         "compile": "npx hardhat compile",
-        "start": "npx hardhat node",
         "deploy": "npx hardhat --network localhost run scripts/deploy.ts",
         "faucet": "npx hardhat --network localhost faucet",
         "clean": "npx hardhat clean",

@@ -47,4 +47,4 @@ const standardConfig = async () => {
     ngrok.loggingCallback()
 }
 
-run();
+run()
