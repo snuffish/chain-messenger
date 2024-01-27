@@ -1,6 +1,8 @@
 # Chain Messenger
 
-### Project dependencies
+## Summary
+
+This protocol is an Decentralised Chat/Communication dApp.
 
 ### Hardhat & Ngrok
 
