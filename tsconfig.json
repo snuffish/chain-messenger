@@ -11,5 +11,5 @@
     },
     "include": ["./scripts", "./test", "./typechain-types"],
     "files": ["./hardhat.config.ts"],
-    "exclude": ["./app", "./web"]
+    "exclude": ["./app", "./web", "./ngrok"]
 }
