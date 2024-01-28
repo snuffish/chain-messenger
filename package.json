@@ -3,6 +3,24 @@
     "version": "1.0.0",
     "description": "Ready-to-use preconfigured HardHat Ethereum development environment with additional tools for smart-contract development",
     "license": "Apache-2.0",
+    "scripts": {
+        "start": "concurrently \"npm:ngrok-forward\" \"npm:hardhat-node\"",
+        "ngrok-forward": "npm start --prefix ngrok",
+        "hardhat-node": "npx hardhat node",
+        "app": "npm start --prefix app",
+        "compile": "npx hardhat compile",
+        "deploy": "npx hardhat --network localhost run scripts/deploy.ts",
+        "faucet": "npx hardhat --network localhost faucet",
+        "clean": "npx hardhat clean",
+        "lint:ts": "eslint scripts/ test/ --ext=ts",
+        "lint:sol": "solhint 'contracts/**/*.sol'",
+        "lint": "npm run lint:sol && npm run lint:ts",
+        "lint:fix": "npm run lint:sol:fix && npm run lint:ts:fix",
+        "lint:ts:fix": "eslint scripts/ test/ --ext=ts --fix",
+        "lint:sol:fix": "prettier 'contracts/**/*.sol' --write",
+        "test": "npx hardhat test",
+        "test:coverage": "npx hardhat coverage"
+    },
     "dependencies": {
         "@openzeppelin/contracts": "^4.9.3",
         "hardhat": "^2.19.4",
@@ -28,23 +46,5 @@
         "solidity-coverage": "^0.8.5",
         "ts-node": "^10.9.2",
         "typescript": "^5.3.3"
-    },
-    "scripts": {
-        "start": "concurrently \"npm:ngrok-forward\" \"npm:hardhat-node\"",
-        "ngrok-forward": "npm start --prefix ngrok",
-        "hardhat-node": "npx hardhat node",
-        "app": "npm start --prefix app",
-        "compile": "npx hardhat compile",
-        "deploy": "npx hardhat --network localhost run scripts/deploy.ts",
-        "faucet": "npx hardhat --network localhost faucet",
-        "clean": "npx hardhat clean",
-        "lint:ts": "eslint scripts/ test/ --ext=ts",
-        "lint:sol": "solhint 'contracts/**/*.sol'",
-        "lint": "npm run lint:sol && npm run lint:ts",
-        "lint:fix": "npm run lint:sol:fix && npm run lint:ts:fix",
-        "lint:ts:fix": "eslint scripts/ test/ --ext=ts --fix",
-        "lint:sol:fix": "prettier 'contracts/**/*.sol' --write",
-        "test": "npx hardhat test",
-        "test:coverage": "npx hardhat coverage"
     }
 }
