@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { useAccount, useBalance, useBlockNumber } from "wagmi";
 import useHash from "../hooks/useHash";
 import useRPC from "../hooks/useRPC";
+import { Button } from "tamagui";
 
 const AccountPage = () => {
     const { data: blockNumber } = useBlockNumber({ watch: true })

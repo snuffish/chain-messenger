@@ -1,20 +1,19 @@
 import '@walletconnect/react-native-compat';
 
-import React from 'react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import {
     Web3Modal,
     createWeb3Modal,
     defaultWagmiConfig
 } from '@web3modal/wagmi-react-native';
 import { registerRootComponent } from "expo";
-import { WagmiConfig } from 'wagmi';
-import { arbitrum, mainnet, polygon, polygonMumbai } from 'wagmi/chains';
 import { StatusBar } from 'expo-status-bar';
-import HomePage from './pages/HomePage';
-import App from './App';
-import { Text, View } from 'react-native';
+import React from 'react';
 import { defineChain } from 'viem';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { WagmiConfig } from 'wagmi';
+import { TamaguiProvider, createTamagui } from 'tamagui'
+import { config } from '@tamagui/config/v2'
+import App from './App';
 
 const projectId = process.env.EXPO_PUBLIC_WALLETCONNECT_CLOUD_PROJECT_ID;
 
@@ -65,15 +64,24 @@ createWeb3Modal({
 
 const queryClient = new QueryClient()
 
+const tamaguiConfig = createTamagui(config)
+
+type Conf = typeof tamaguiConfig
+declare module 'tamagui' {
+    interface TamaguiCustomConfig extends Conf { }
+}
+
 const Main = (): any => {
     return (
-        <WagmiConfig config={wagmiConfig}>
-            <QueryClientProvider client={queryClient}>
-                <StatusBar style="auto" />
-                <App />
-                <Web3Modal />
-            </QueryClientProvider>
-        </WagmiConfig>
+        <TamaguiProvider config={tamaguiConfig}>
+            <WagmiConfig config={wagmiConfig}>
+                <QueryClientProvider client={queryClient}>
+                    <StatusBar style="auto" />
+                    <App />
+                    <Web3Modal />
+                </QueryClientProvider>
+            </WagmiConfig>
+        </TamaguiProvider>
     )
 }
 
