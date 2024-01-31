@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { useAccount, useBalance, useBlockNumber } from 'wagmi';
 import useHash from './hooks/useHash';
 import AccountPage from './pages/AccountPage';
+import SendMessagePage from './pages/SendMessagePage';
 
 export default function App() {
   const { isConnected } = useAccount()
@@ -14,7 +15,7 @@ export default function App() {
         <W3mButton />
       </View>
 
-      {isConnected && (<AccountPage />)}
+      {isConnected && (<SendMessagePage />)}
     </View >
   );
 }
