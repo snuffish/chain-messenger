@@ -64,7 +64,7 @@ declare module 'tamagui' {
     interface TamaguiCustomConfig extends Conf { }
 }
 
-const Provider = ({ children }: any): React.ReactNode => {
+const Provider = ({ children }): React.ReactNode => {
     return (
         <TamaguiProvider config={tamaguiConfig}>
             <WagmiConfig config={wagmiConfig}>
