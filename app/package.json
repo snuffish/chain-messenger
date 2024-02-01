@@ -30,7 +30,8 @@
     "react-native-svg": "^13.9.0",
     "tamagui": "^1.88.17",
     "viem": "^1.20.1",
-    "wagmi": "^1.4.12"
+    "wagmi": "^1.4.12",
+    "@expo/webpack-config": "^19.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
