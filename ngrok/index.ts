@@ -40,7 +40,10 @@ const standardConfig = async () => {
     const session = await sessionBuilder.connect();
     const listener = await session.httpEndpoint().domain(domain).listen();
     console.log("Ingress established at:", listener.url());
-    httpServer.listen(8080);
+    httpServer.listen(8080).listen(8081);
+
+    listener.forward(`localhost:${forwardPort}`);
+
     listener.forward(`localhost:${forwardPort}`);
 
     // unregister logging callback
