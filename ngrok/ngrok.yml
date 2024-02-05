@@ -5,6 +5,7 @@ tunnels:
     proto: http
     addr: https://localhost:8080
     domain: chain.messenger.ngrok.dev
-  second:
-    proto: http
-    addr: 3001
+  # second:
+  #   proto: http
+  #   addr: 3001
+  #   dopmain: chain.messenger.ngrok.dev
