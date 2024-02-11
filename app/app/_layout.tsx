@@ -3,6 +3,7 @@ import { SplashScreen, Stack } from 'expo-router'
 import { useEffect } from 'react'
 
 import Provider from './Provider'
+import React from 'react'
 
 export default function Layout() {
   const [loaded] = useFonts({

@@ -1,11 +1,14 @@
 import { Info, MessageCircle, Settings } from '@tamagui/lucide-icons'
 import { Tabs } from 'expo-router'
+import React from 'react'
 
 const TabsLayout = () => {
   return (
-    <Tabs>
+    <Tabs screenOptions={{
+      headerShown: false
+    }}>
       <Tabs.Screen
-        name="index"
+        name="messages"
         options={{
           headerTitle: 'Messages',
           title: 'Messages',

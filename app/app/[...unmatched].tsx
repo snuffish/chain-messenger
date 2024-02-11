@@ -1,4 +1,5 @@
 import { Link, Stack } from 'expo-router'
+import React from 'react'
 import { YStack } from 'tamagui'
 import { Container, Main, Subtitle, Title } from '~/tamagui.config'
 
@@ -11,7 +12,7 @@ export default function NotFoundScreen() {
       <Main>
         <YStack>
           <Title>Not found!</Title>
-          <Link href="/">
+          <Link href="/messages">
             <Subtitle>Go to home!</Subtitle>
           </Link>
         </YStack>
