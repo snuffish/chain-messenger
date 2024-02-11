@@ -1,0 +1,17 @@
+# WIP
+
+version: 2
+authtoken: "Ujyqdp9YyyCbV3oesor6_5S85LWCv2F7j2ByB3rVx"
+tunnels:
+  first:
+    proto: http
+    addr: https://localhost:8080
+    domain: chain.messenger.ngrok.dev
+
+  second:
+    proto: http
+    addr: 3001
+  # second:
+  #   proto: http
+  #   addr: 3001
+  #   dopmain: chain.messenger.ngrok.dev
