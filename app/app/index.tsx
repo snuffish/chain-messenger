@@ -3,6 +3,6 @@ import React from "react";
 
 export default function () {
     return (
-        <Redirect href='/(tabs)/messages' />
+        <Redirect href='/(tabs)/messags/' />
     )
 }

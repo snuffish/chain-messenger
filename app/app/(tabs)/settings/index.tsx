@@ -1,3 +1,4 @@
+import React from 'react'
 import { Button, SizeTokens, Spacer, View, YStack, createStyledContext, styled } from 'tamagui'
 
 const Settings = (): any => {
