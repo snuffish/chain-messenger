@@ -7,7 +7,10 @@ export default function MessagesLayout() {
     return (
         <Layout>
             <Layout.Screen name="index" options={{
-                headerTitle: 'Messages'
+                title: 'Messages'
+            }} />
+            <Layout.Screen name="[id]" options={{
+                title: 'Conversation'
             }} />
         </Layout>
     )
