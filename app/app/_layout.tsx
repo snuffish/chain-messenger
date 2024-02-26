@@ -2,8 +2,8 @@ import { useFonts } from 'expo-font'
 import { SplashScreen, Stack } from 'expo-router'
 import { useEffect } from 'react'
 
-import Provider from './context/Provider'
 import React from 'react'
+import { ContextProvider } from './context'
 
 export default function Layout() {
   const [loaded] = useFonts({
@@ -20,7 +20,7 @@ export default function Layout() {
   if (!loaded) return null
 
   return (
-    <Provider>
+    <ContextProvider>
       <Stack>
         <Stack.Screen
           name="(tabs)"
@@ -29,6 +29,6 @@ export default function Layout() {
           }}
         />
       </Stack>
-    </Provider>
+    </ContextProvider>
   )
 }

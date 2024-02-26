@@ -8,7 +8,7 @@ const { Layout, Screen } = createLayout({
 export default function InfoLayout() {
     return (
         <Layout>
-            <Screen name="test" title="TESAT" />
+            <Screen name="test" title="TEST" />
         </Layout>
     )
 }
