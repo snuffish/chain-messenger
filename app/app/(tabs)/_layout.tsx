@@ -2,7 +2,7 @@ import { Info, MessageCircle, Settings } from '@tamagui/lucide-icons'
 import { Tabs } from 'expo-router'
 import React from 'react'
 
-const TabsLayout = () => {
+export default function TabsLayout() {
   return (
     <Tabs screenOptions={{
       headerShown: false
@@ -34,5 +34,3 @@ const TabsLayout = () => {
     </Tabs>
   )
 }
-
-export default TabsLayout
