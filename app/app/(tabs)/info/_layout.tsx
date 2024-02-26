@@ -1,14 +1,14 @@
 import React from "react";
 import { createLayout } from "~/app/utils";
 
-const Layout = createLayout()
+const { Layout, Screen } = createLayout({
+    title: 'Info'
+})
 
-export default function MessagesLayout() {
+export default function InfoLayout() {
     return (
         <Layout>
-            <Layout.Screen name="index" options={{
-                title: 'Info'
-            }} />
+            <Screen name="test" title="TESAT" />
         </Layout>
     )
 }

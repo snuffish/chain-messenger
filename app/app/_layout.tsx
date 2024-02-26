@@ -2,7 +2,7 @@ import { useFonts } from 'expo-font'
 import { SplashScreen, Stack } from 'expo-router'
 import { useEffect } from 'react'
 
-import Provider from './Provider'
+import Provider from './context/Provider'
 import React from 'react'
 
 export default function Layout() {
@@ -19,18 +19,16 @@ export default function Layout() {
 
   if (!loaded) return null
 
-  const TabsStack = (
-    <Stack.Screen
-      name="(tabs)"
-      options={{
-        headerShown: false
-      }}
-    />
-  )
-
   return (
     <Provider>
-      <Stack>{TabsStack}</Stack>
+      <Stack>
+        <Stack.Screen
+          name="(tabs)"
+          options={{
+            headerShown: false
+          }}
+        />
+      </Stack>
     </Provider>
   )
 }

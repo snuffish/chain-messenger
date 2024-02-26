@@ -15,7 +15,7 @@ const UserRow = ({ username }: UserRowTypes) => {
     )
 }
 
-export default function () {
+export default function Messages() {
     return (
         <View>
             <UserRow username='Snuffish' />

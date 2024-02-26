@@ -123,7 +123,7 @@ type AppConfig = typeof config
 // Docs: https://tamagui.dev/docs/core/configuration
 
 declare module 'tamagui' {
-  interface TamaguiCustomConfig extends AppConfig {}
+  interface TamaguiCustomConfig extends AppConfig { }
 }
 
 export default config
