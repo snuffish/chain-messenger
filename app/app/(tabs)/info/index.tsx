@@ -3,6 +3,6 @@ import { Text } from 'tamagui'
 
 export default function () {
     return (
-        <Text>SETTINGS INDEX</Text>
+        <Text>INFO INDEX</Text>
     )
 }

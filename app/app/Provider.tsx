@@ -1,6 +1,7 @@
 import { TamaguiProvider, Theme } from 'tamagui'
 
 import tamaguiConfig from '../tamagui.config'
+import React from 'react'
 
 const Provider = ({ children }: any) => {
   return (

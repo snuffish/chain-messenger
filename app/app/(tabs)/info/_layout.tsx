@@ -7,7 +7,7 @@ export default function MessagesLayout() {
     return (
         <Layout>
             <Layout.Screen name="index" options={{
-                title: 'Settings'
+                title: 'Info'
             }} />
         </Layout>
     )
